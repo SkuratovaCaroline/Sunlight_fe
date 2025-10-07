@@ -1,0 +1,155 @@
+:root {
+  --font-family: "Montserrat", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(ellipse at bottom, #0d1b2a, #000);
+  overflow: auto;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  width: 1px;
+  height: 1px;
+  box-shadow: 20px 30px white, 100px 150px rgba(255, 255, 255, 0.6), 300px 200px rgba(255, 255, 255, 0.3), 500px 100px white, 700px 250px rgba(255, 255, 255, 0.5), 900px 400px rgba(255, 255, 255, 0.8), 1100px 600px white, 1300px 700px rgba(255, 255, 255, 0.4);
+  animation: twinkle 2s infinite alternate;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.login-page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  padding: 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 326px;
+  height: 131px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  background: none;
+  border: none;
+  color: #fff;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.login-title {
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 4px 57px rgba(255, 247, 247, 0.91);
+  margin: 40px 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.form-label {
+  font-weight: 400;
+  font-size: 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.form-input {
+  width: 400px;
+  height: 60px;
+  border-radius: 20px;
+  background: rgba(141, 139, 139, 0.81);
+  border: none;
+  outline: none;
+  font-size: 20px;
+  padding: 0 15px;
+  color: #fff;
+}
+
+.form-actions {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btn-submit {
+  width: 400px;
+  height: 90px;
+  border-radius: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  background: rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.8);
+  backdrop-filter: blur(2px);
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  box-shadow: 0 0 35px 10px rgb(255, 0, 0);
+  background: rgba(255, 0, 0, 0.3);
+}
+
+.register-link {
+  font-weight: 400;
+  font-size: 40px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 4px 57px rgba(255, 247, 247, 0.91);
+  text-decoration: none;
+}
+
+.login-title,
+.form-label,
+.register-link {
+  font-size: 40px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
