@@ -1,0 +1,90 @@
+:root {
+  --font-family: "Montserrat", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  color: #fff;
+}
+
+body {
+  background: linear-gradient(160deg, #000 0%, #0d1b2a 40%, #1e3c72 100%);
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  box-shadow:
+    20px 30px rgba(255,255,255,0.2),
+    60px 120px rgba(255,255,255,0.1),
+    120px 250px rgba(255,255,255,0.15),
+    200px 400px rgba(255,255,255,0.25),
+    350px 500px rgba(255,255,255,0.2),
+    500px 100px rgba(255,255,255,0.1),
+    700px 300px rgba(255,255,255,0.2),
+    900px 450px rgba(255,255,255,0.15),
+    1100px 600px rgba(255,255,255,0.2),
+    1300px 700px rgba(255,255,255,0.1);
+  animation: twinkle 6s infinite alternate;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  box-shadow:
+    100px 150px rgba(255,255,255,0.3),
+    250px 200px rgba(255,255,255,0.4),
+    400px 350px rgba(255,255,255,0.35),
+    600px 250px rgba(255,255,255,0.3),
+    800px 100px rgba(255,255,255,0.25),
+    950px 500px rgba(255,255,255,0.4),
+    1150px 650px rgba(255,255,255,0.35),
+    1250px 300px rgba(255,255,255,0.3);
+  animation: twinkle 4s infinite alternate;
+  z-index: 0;
+}
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to   { opacity: 1; }
+}
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  min-height: 30px; // фиксированная высота для стабильности
+
+  .form-input {
+    flex: 1;
+  }
+
+  .error-text {
+    font-size: 16px;
+    color: #ff5555;
+    min-width: 160px; // фикс ширина, чтобы не прыгало
+    display: inline-block;
+    text-align: left;
+  }
+}
