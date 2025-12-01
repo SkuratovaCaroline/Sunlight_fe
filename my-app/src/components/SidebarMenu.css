@@ -1,0 +1,118 @@
+/* src/styles/sidebar-menu.css */
+
+
+
+.menu-toggle {
+    position: fixed;
+    top: 30px; 
+    right: 30px; 
+    z-index: 9999; 
+    cursor: pointer;
+    width: 40px; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; 
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.burger {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    position: relative;
+    transition: background 0.3s ease;
+}
+.burger::before,
+.burger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transition: transform 0.3s ease, top 0.3s ease, opacity 0.2s ease;
+}
+.burger::before { top: -10px; }
+.burger::after { top: 10px; }
+
+.burger.open {
+    background: transparent; 
+}
+.burger.open::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+.burger.open::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+
+.circular-menu {
+    position: fixed;
+    top: -70px;
+    right: -70px; 
+    
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: #000;
+    box-shadow:
+        0 0 0 2px rgba(255, 0, 0, 0.4),
+        0 0 20px rgba(255, 0, 0, 0.35),
+        0 0 60px rgba(255, 0, 0, 0.45);
+        
+    transition: width 0.5s ease, height 0.5s ease;
+    z-index: 9998; 
+    overflow: hidden;
+}
+
+.circular-menu.open {
+    width: 500px; 
+    height: 500px;
+}
+
+.circular-menu ul {
+    list-style: none;
+    padding: 100px 0 0 140px; 
+    margin: 0;
+    text-align: left; 
+    
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.3s; 
+}
+.circular-menu.open ul {
+    opacity: 1;
+}
+
+.circular-menu ul li {
+    margin: 15px 0;
+}
+.circular-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px; 
+    font-weight: bold;
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+.circular-menu ul li a:hover {
+    color: #ff3b3b; 
+}
+
+@media (max-width: 600px) {
+    .circular-menu.open {
+        width: 100vw; 
+        height: 100vw;
+        top: -50vw; 
+        right: -50vw;
+    }
+    .circular-menu ul {
+        padding: 50vw 0 0 15vw; 
+        text-align: left;
+    }
+}
